@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView.text = "Sun Asterisk Inc."
+        textView.text = "Vietnam Education Unit"
     }
 }
