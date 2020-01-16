@@ -3,7 +3,7 @@ package vn.sun.asterisk.domain.use.case
 import vn.sun.asterisk.domain.model.Task
 import vn.sun.asterisk.domain.repository.TaskRepository
 
-class GetTasksUseCaseNoParam(
+class GetTasksUseCase(
     private val repository: TaskRepository
 ) : UseCaseNoParam<List<Task>> {
 
