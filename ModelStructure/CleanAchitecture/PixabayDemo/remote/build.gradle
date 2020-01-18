@@ -10,8 +10,9 @@ dependencies {
     def retrofit_version = "2.7.1"
     def koin_version = "2.0.1"
 
-    implementation project(path: ':common')
-    implementation project(path: ':data')
+    implementation project(':common')
+    implementation project(':domain')
+    implementation project(':data')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
