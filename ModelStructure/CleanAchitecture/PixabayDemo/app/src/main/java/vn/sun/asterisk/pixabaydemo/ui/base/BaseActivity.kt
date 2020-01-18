@@ -15,16 +15,13 @@ internal abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setContentView(layoutResource)
         hideActionBar()
-        setBindingVariables()
         initComponents()
         observeData()
     }
-    private fun hideActionBar() = supportActionBar?.hide()
 
-    protected open fun setBindingVariables(){
-        viewModel.create()
-    }
+    private fun hideActionBar() = supportActionBar?.hide()
 
     protected abstract fun initComponents()
 

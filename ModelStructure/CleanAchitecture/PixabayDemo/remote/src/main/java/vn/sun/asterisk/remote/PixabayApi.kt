@@ -8,7 +8,7 @@ interface PixabayApi {
 
     @GET("/")
     fun getPhotosAsync(
-        @Query("key") apiKey: String = "",
+        @Query("key") apiKey: String = ApiConfig.apiKey,
         @Query("q") keyword: String
     ): PhotosResponse
 }
