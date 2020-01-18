@@ -13,7 +13,7 @@ import vn.sun.asterisk.remote.datasource.PhotoRemoteDataSourceImpl
 val remoteModule = module {
     single {
         RemoteFactory.buildRestApi(
-            baseUrl = get(named(ScopeNames.API_KEY)),
+            baseUrl = get(named(ScopeNames.API_KEY)), //This should be base url instead of api key
             restApi = PixabayApi::class.java,
             converterFactory = GsonConverterFactory.create(),
             callAdapterFactory = CoroutineCallAdapterFactory()
