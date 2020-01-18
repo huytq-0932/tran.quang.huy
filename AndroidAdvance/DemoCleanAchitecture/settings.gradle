@@ -1,2 +1,0 @@
-include ':presentation', ':domain'
-rootProject.name='DemoCleanAchitecture'
