@@ -9,6 +9,6 @@ class PhotoRemoteDataSourceImpl(
     private val pixabayApi: PixabayApi
 ) : PhotoDataSource {
 
-    override fun getPhotos(key: String): List<PhotoEntity> =
-        pixabayApi.getPhotosAsync(keyword = key).hits.map(PhotosResponse.Hit::map)
+    override suspend fun getPhotos(key: String): List<PhotoEntity> =
+        pixabayApi.getPhotos(keyword = key).hits.map(PhotosResponse.Hit::map)
 }

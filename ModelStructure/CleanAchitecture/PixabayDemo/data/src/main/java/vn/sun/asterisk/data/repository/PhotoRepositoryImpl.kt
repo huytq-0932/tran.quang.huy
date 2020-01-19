@@ -9,6 +9,6 @@ class PhotoRepositoryImpl(
     private val dataSource: PhotoDataSource
 ) : PhotoRepository {
 
-    override fun getImages(key: String): List<Photo> =
+    override suspend fun getImages(key: String): List<Photo> =
         dataSource.getPhotos(key).map(PhotoEntity::map)
 }

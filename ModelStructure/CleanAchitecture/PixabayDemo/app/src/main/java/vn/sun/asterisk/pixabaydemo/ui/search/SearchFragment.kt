@@ -1,5 +1,6 @@
 package vn.sun.asterisk.pixabaydemo.ui.search
 
+import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.search_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import vn.sun.asterisk.pixabaydemo.R
@@ -15,6 +16,13 @@ internal class SearchFragment private constructor() : BaseFragment<SearchViewMod
 
     override fun initComponents() {
         recyclerPhotos.adapter = adapter
+        viewModel.getPhotos("vietnam")
+    }
+
+    override fun observeData() = with(viewModel) {
+        super.observeData()
+
+        photos.observe(viewLifecycleOwner, Observer(adapter::submitList))
     }
 
     companion object {

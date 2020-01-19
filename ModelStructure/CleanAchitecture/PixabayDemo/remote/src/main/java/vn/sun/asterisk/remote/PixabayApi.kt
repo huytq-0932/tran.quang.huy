@@ -7,7 +7,7 @@ import vn.sun.asterisk.remote.response.PhotosResponse
 interface PixabayApi {
 
     @GET("/")
-    fun getPhotosAsync(
+    suspend fun getPhotos(
         @Query("key") apiKey: String = ApiConfig.apiKey,
         @Query("q") keyword: String
     ): PhotosResponse

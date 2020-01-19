@@ -1,5 +1,6 @@
 package vn.sun.asterisk.remote.di
 
+import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -17,7 +18,7 @@ val remoteModule = module {
         RemoteFactory.buildRestApi(
             baseUrl = ApiConfig.BASE_URL,
             restApi = PixabayApi::class.java,
-            converterFactory = GsonConverterFactory.create(),
+            converterFactory = GsonConverterFactory.create(GsonBuilder().setLenient().create()),
             callAdapterFactory = CoroutineCallAdapterFactory()
         )
     }
