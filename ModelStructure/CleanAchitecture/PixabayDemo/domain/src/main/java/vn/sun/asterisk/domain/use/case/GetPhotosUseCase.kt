@@ -8,5 +8,5 @@ class GetPhotosUseCase(
     private val repository: PhotoRepository
 ) : UseCase<String, List<Photo>> {
 
-    override fun execute(input: String): List<Photo> = repository.getImages(input)
+    override suspend fun execute(input: String): List<Photo> = repository.getImages(input)
 }

@@ -16,6 +16,5 @@ internal class MainActivity : BaseActivity<MainViewModel>() {
     }
 
     override fun observeData() {
-
     }
 }
