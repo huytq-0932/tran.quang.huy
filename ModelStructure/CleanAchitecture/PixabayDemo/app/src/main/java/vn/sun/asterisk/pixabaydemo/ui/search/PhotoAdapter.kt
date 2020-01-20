@@ -22,7 +22,16 @@ class PhotoAdapter :
     class PhotoViewHolder(itemView: View) : BaseViewHolder<Photo>(itemView) {
 
         override fun onBindData(itemData: Photo) {
-            Glide.with(itemView).load(itemData.url).into(itemView.imageResult)
+            Glide.with(itemView)
+                .load(itemData.url)
+                .placeholder(
+                    listOf(
+                        R.color.colorAccent,
+                        R.color.colorPrimary,
+                        R.color.colorPrimaryDark
+                    ).random()
+                )
+                .into(itemView.imageResult)
         }
     }
 

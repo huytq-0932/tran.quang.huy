@@ -10,5 +10,7 @@ class PhotoRemoteDataSourceImpl(
 ) : PhotoDataSource {
 
     override suspend fun getPhotos(key: String): List<PhotoEntity> =
-        pixabayApi.getPhotosAsync(keyword = key).await().hits.map(PhotosResponse.Hit::map)
+        pixabayApi.getPhotos(keyword = key).hits.map(PhotosResponse.Hit::map).also{
+            println("photos = $it")
+        }
 }

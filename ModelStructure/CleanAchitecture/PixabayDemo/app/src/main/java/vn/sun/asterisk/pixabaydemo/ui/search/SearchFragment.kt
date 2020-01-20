@@ -16,7 +16,11 @@ internal class SearchFragment private constructor() : BaseFragment<SearchViewMod
 
     override fun initComponents() {
         recyclerPhotos.adapter = adapter
-        viewModel.getPhotos("vietnam")
+        viewModel.getPhotos("hanoi")
+
+        buttonSearch.setOnClickListener {
+            viewModel.getPhotos(keyword = editKeyword.text.toString())
+        }
     }
 
     override fun observeData() = with(viewModel) {
